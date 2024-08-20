@@ -25,6 +25,9 @@
 \RequirePackage[parfill]{parskip} % Remove paragraph indentation
 \RequirePackage{array} % Required for boldface (\bf and \bfseries) tabular columns
 \RequirePackage{ifthen} % Required for ifthenelse statements
+\RequirePackage{graphicx} % Required for cv image
+
+\graphicspath{ {./} } % Set Image Path to be the root path
 
 \pagestyle{empty} % Suppress page numbers
 
@@ -37,21 +40,38 @@
 
 \def \addressSep {$\diamond$} % Set default address separator to a diamond
 
-% One, two or three address lines can be specified 
+% One, two, three, four, five address lines can be specified
 \let \@addressone \relax
 \let \@addresstwo \relax
 \let \@addressthree \relax
+\let \@addressfour \relax
+\let \@addressfive \relax
 
-% \address command can be used to set the first, second, and third address (last 2 optional)
+% \address command can be used to set the first, second, third, fourth, fift address (last 2 optional)
 \def \address #1{
   \@ifundefined{@addresstwo}{
     \def \@addresstwo {#1}
   }{
-  \@ifundefined{@addressthree}{
-  \def \@addressthree {#1}
-  }{
-     \def \@addressone {#1}
-  }}
+      \@ifundefined{@addressthree}{
+        \def \@addressthree {#1}
+      }{
+          \@ifundefined{@addressfour}{
+              \def \@addressfour {#1}
+          }{
+              \@ifundefined{@addressfive}{
+                  \def \@addressfive {#1}
+              }{
+                  \def \@addressone {#1}
+              }
+          }
+      }
+  }
+}
+
+% \image command can be used to set an image
+\let \@image \relax
+\def \image #1{
+    \def \@image {#1}
 }
 
 % \printaddress is used to style an address line (given as input)
@@ -72,6 +92,22 @@
   \endgroup
 }
 
+\def \printtitle {
+    \begingroup
+        \printname % Print the name specified with \name
+        \@ifundefined{@addressone}{}{ % Print the first address if specified
+            \printaddress{\@addressone}}
+        \@ifundefined{@addresstwo}{}{ % Print the second address if specified
+            \printaddress{\@addresstwo}}
+        \@ifundefined{@addressthree}{}{ % Print the third address if specified
+            \printaddress{\@addressthree}}
+        \@ifundefined{@addressfour}{}{ % Print the fourth address if specified
+            \printaddress{\@addressfour}}
+        \@ifundefined{@addressfive}{}{ % Print the fifth address if specified
+            \printaddress{\@addressfive}}
+    \endgroup
+}
+
 %----------------------------------------------------------------------------------------
 %	PRINT THE HEADING LINES
 %----------------------------------------------------------------------------------------
@@ -79,13 +115,20 @@
 \let\ori@document=\document
 \renewcommand{\document}{
   \ori@document  % Begin document
-  \printname % Print the name specified with \name
-  \@ifundefined{@addressone}{}{ % Print the first address if specified
-    \printaddress{\@addressone}}
-  \@ifundefined{@addresstwo}{}{ % Print the second address if specified
-    \printaddress{\@addresstwo}}
-     \@ifundefined{@addressthree}{}{ % Print the third address if specified
-    \printaddress{\@addressthree}}
+  \@ifundefined{@image}{
+      % If \@image is undefined, print page normally
+      \printtitle
+  }{
+    % If \@image is defined, print page in columns
+    % title
+    \begin{minipage}[c]{0.8\linewidth}
+        \printtitle
+    \end{minipage}
+    % image
+    \begin{minipage}[c]{0.2\linewidth}
+        \includegraphics[width=3.5cm]{\@image}
+    \end{minipage}
+  }
 }
 
 %----------------------------------------------------------------------------------------
