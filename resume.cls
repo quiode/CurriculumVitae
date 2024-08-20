@@ -22,9 +22,9 @@
 
 \LoadClass[11pt,letterpaper]{article} % Font size and paper type
 
-\usepackage[parfill]{parskip} % Remove paragraph indentation
-\usepackage{array} % Required for boldface (\bf and \bfseries) tabular columns
-\usepackage{ifthen} % Required for ifthenelse statements
+\RequirePackage[parfill]{parskip} % Remove paragraph indentation
+\RequirePackage{array} % Required for boldface (\bf and \bfseries) tabular columns
+\RequirePackage{ifthen} % Required for ifthenelse statements
 
 \pagestyle{empty} % Suppress page numbers
 
@@ -129,3 +129,11 @@
 \def\sectionlineskip{\medskip} % The space above the horizontal line for each section 
 \def\nameskip{\bigskip} % The space after your name at the top
 \def\sectionskip{\medskip} % The space after the heading section
+
+% For Footnotes without links
+\newcommand\blfootnote[1]{
+    \begingroup
+    \renewcommand\thefootnote{}\footnote{#1}
+    \addtocounter{footnote}{-1}
+    \endgroup
+}
