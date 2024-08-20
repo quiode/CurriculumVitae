@@ -10,17 +10,13 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: CV.tex
-      - name: Upload PDF file
-        uses: actions/upload-artifact@v4
-        with:
-          name: PDF
-          path: CV.pdf
       - name: Create a Release
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
-          prerelease: true
+          prerelease: false
+          draft: false
           title: "Latest CV"
           files: |
             LICENSE
