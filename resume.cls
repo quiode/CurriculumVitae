@@ -40,32 +40,12 @@
 
 \def \addressSep {$\diamond$} % Set default address separator to a diamond
 
-% One, two, three, four, five address lines can be specified
-\let \@addressone \relax
-\let \@addresstwo \relax
-\let \@addressthree \relax
-\let \@addressfour \relax
-\let \@addressfive \relax
-
-% \address command can be used to set the first, second, third, fourth, fift address (last 2 optional)
-\def \address #1{
-  \@ifundefined{@addresstwo}{
-    \def \@addresstwo {#1}
-  }{
-      \@ifundefined{@addressthree}{
-        \def \@addressthree {#1}
-      }{
-          \@ifundefined{@addressfour}{
-              \def \@addressfour {#1}
-          }{
-              \@ifundefined{@addressfive}{
-                  \def \@addressfive {#1}
-              }{
-                  \def \@addressone {#1}
-              }
-          }
-      }
-  }
+\def \printaddresses {}
+% \address command can be used to set addresses
+\def \address #1 {
+    \g@addto@macro\printaddresses {
+        \printaddress{#1}
+    }
 }
 
 % \image command can be used to set an image
@@ -95,16 +75,7 @@
 \def \printtitle {
     \begingroup
         \printname % Print the name specified with \name
-        \@ifundefined{@addressone}{}{ % Print the first address if specified
-            \printaddress{\@addressone}}
-        \@ifundefined{@addresstwo}{}{ % Print the second address if specified
-            \printaddress{\@addresstwo}}
-        \@ifundefined{@addressthree}{}{ % Print the third address if specified
-            \printaddress{\@addressthree}}
-        \@ifundefined{@addressfour}{}{ % Print the fourth address if specified
-            \printaddress{\@addressfour}}
-        \@ifundefined{@addressfive}{}{ % Print the fifth address if specified
-            \printaddress{\@addressfive}}
+        \printaddresses % Print the addresses specified with \address
     \endgroup
 }
 
