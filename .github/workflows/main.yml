@@ -8,11 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
-        uses: actions/checkout@v4
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v3
+        uses: actions/checkout@v3
+      - name: Typst
+        uses: lvignoli/typst-action@main
         with:
-          root_file: CV.tex
+          source_file: CV.typ
       - name: Create a Release
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
