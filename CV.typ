@@ -6,6 +6,7 @@
 #set document(title: "Lebenslauf von Dominik Schwaiger", author: "Dominik Schwaiger")
 // resume import
 #show: doc => resume(
+  doc,
   "Dominik Schwaiger",
   headlines: (("10.03.2004, Bülach",), ("Hofackerstrasse 3, 8722 Kaltbrunn",), (
     link("tel:(+41) 78 746 68 28"),

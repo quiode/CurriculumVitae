@@ -19,7 +19,7 @@
   pad(left: 1cm, body)
 }
 
-#let resume(name, headlines: (), experiences: (), custom: (), avatar: none) = {
+#let resume(doc, name, headlines: (), experiences: (), custom: (), avatar: none) = {
   set page(margin: (top: 0.6in, right: 0.75in, bottom: 0.6in, left: 0.75in))
   set text(font: "New Computer Modern", size: 11pt)
   show raw: set text(font: "New Computer Modern Mono")
@@ -63,6 +63,9 @@
   for custom_section in custom {
     section(custom_section.title, custom_section.body)
   }
+
+  // Rest of the document
+  doc
 
   align(bottom, text(size: 0.75em)[
     #line(length: 33%, stroke: 0.5pt)
