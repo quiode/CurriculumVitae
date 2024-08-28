@@ -3,7 +3,7 @@
 
 // general settings
 #set text(lang: "de")
-#set document(title: "CV von Dominik Schwaiger", author: "Dominik Schwaiger")
+#set document(title: "Lebenslauf von Dominik Schwaiger", author: "Dominik Schwaiger")
 // resume import
 #show: doc => resume(
   "Dominik Schwaiger",
