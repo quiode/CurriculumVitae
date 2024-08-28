@@ -9,8 +9,8 @@
   doc,
   "Dominik Schwaiger",
   headlines: (("10.03.2004, Bülach",), ("Hofackerstrasse 3, 8722 Kaltbrunn",), (
-    link("tel:(+41) 78 746 68 28"),
     link("mailto:mail@dominik-schwaiger.ch"),
+    link("tel:0787466828", "078 746 68 28"),
   ), (link("https://dominik-schwaiger.ch"),),),
   avatar: "avatar.jpeg",
   experiences: (
