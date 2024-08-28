@@ -58,9 +58,9 @@
   custom: ((title: "Fähigkeiten", body: [
     #grid(columns: (1fr, 1fr), [
       === Sprachen
-      - Deutsch - Muttersprache
-      - Englisch - Fortgeschritten
-      - Französisch - Grundkenntnisse
+      Deutsch - Muttersprache \
+      Englisch - Fortgeschritten \
+      Französisch - Grundkenntnisse
     ], [
       === Programmiersprachen und Frameworks
       Angular, Bootstrap, Springboot, Apache POI, Docker, Linux
