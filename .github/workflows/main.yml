@@ -15,8 +15,8 @@ jobs:
         with:
           source_file: CV.typ
           options: |
-              --font-path
-              fontawesome
+            --font-path
+            fontawesome
       - name: Create a Release
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
