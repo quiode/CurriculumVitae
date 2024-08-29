@@ -8,11 +8,16 @@
 // resume import
 #show: doc => resume(
   doc,
-  "Dominik Schwaiger " + fa-ice-cream(),
-  headlines: (("10.03.2004, Bülach",), ("Hofackerstrasse 3, 8722 Kaltbrunn",), (
-    link("mailto:mail@dominik-schwaiger.ch"),
-    link("tel:0787466828", "078 746 68 28"),
-  ), (link("https://dominik-schwaiger.ch"),),),
+  "Dominik Schwaiger",
+  headlines: (
+    (fa-cake-candles(solid: true) + " 10.03.2004, Bülach",),
+    (fa-house(solid: true) + " Hofackerstrasse 3, 8722 Kaltbrunn",),
+    (
+      fa-envelope(solid: true) + " " + link("mailto:mail@dominik-schwaiger.ch"),
+      fa-mobile(solid: true) + " " + link("tel:0787466828", "078 746 68 28"),
+    ),
+    (fa-globe(solid: true) + " " + link("https://dominik-schwaiger.ch"),),
+  ),
   avatar: "avatar.jpeg",
   experiences: (
     (title: "Ausbildung", events: ((
