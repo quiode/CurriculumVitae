@@ -1,5 +1,6 @@
 // My actual CV
-#import "resume.typ": resume
+#import "resume.typ": resume // resume template
+#import "@preview/fontawesome:0.4.0": * // for icons
 
 // general settings
 #set text(lang: "de")
@@ -7,7 +8,7 @@
 // resume import
 #show: doc => resume(
   doc,
-  "Dominik Schwaiger",
+  "Dominik Schwaiger " + fa-ice-cream(),
   headlines: (("10.03.2004, Bülach",), ("Hofackerstrasse 3, 8722 Kaltbrunn",), (
     link("mailto:mail@dominik-schwaiger.ch"),
     link("tel:0787466828", "078 746 68 28"),
