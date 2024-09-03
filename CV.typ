@@ -57,7 +57,7 @@
     (title: "Weitere Erfahrungen", events: ((
       title: "Informatikschule 61 Frauenfeld",
       location: none,
-      date: (start: "July 2022", end: "November 2022"),
+      date: (start: "Juli 2022", end: "November 2022"),
       description: [Rekrutenschule Telematiksoldat],
     ),)),
   ),
