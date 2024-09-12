@@ -25,6 +25,7 @@
       location: none,
       date: (start: "2023", end: "jetzt"),
       description: [Bachelor Informatik],
+      remark: "BP: 5.5"
     ), (
       title: "Kantonsschule Wattwil",
       location: none,
@@ -33,6 +34,7 @@
         Schwerpunkt Physik und Anwendungen der Mathematik \
         CodeCamp, Amnesty International
       ],
+      remark: none
     ))),
     (
       title: "Berufserfahrung",
@@ -45,12 +47,14 @@
             Frontend mit Angular und Bootstrap, Backend mit Spring Boot und Apache POI \
             Deployen von neuen Projekten mit Docker
           ],
+          remark: none
         ),
         (
           title: "Praktikant Informatik",
           location: "Markant AG",
           date: (start: "Oktober 2019", end: none),
           description: [Einrichten von Arbeitsplätzen, IT-Support],
+          remark: none
         ),
       ),
     ),
@@ -59,6 +63,7 @@
       location: none,
       date: (start: "Juli 2022", end: "November 2022"),
       description: [Rekrutenschule Telematiksoldat],
+      remark: none
     ),)),
   ),
   custom: ((title: "Fähigkeiten", body: [

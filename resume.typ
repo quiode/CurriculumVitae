@@ -52,8 +52,15 @@
             event.date.start + if (event.date.end != none) { " - " + event.date.end },
           ),
         )
+
         v(-5pt)
-        event.description
+
+        grid(
+          columns: (2fr, 1fr),
+          align: (left, right),
+          event.description,
+          event.remark,
+        )
 
         v(0.5cm)
       }
