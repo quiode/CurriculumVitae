@@ -25,12 +25,13 @@
   show raw: set text(font: "New Computer Modern Mono")
 
   align(center)[
-    #if avatar == none { head(name, headlines) } else {
+    #if avatar == none {
+      head(name, headlines)
+    } else {
       grid(
         columns: (8fr, 2fr),
         align: center,
-        head(name, headlines),
-        image(avatar, width: 3.5cm),
+        head(name, headlines), image(avatar, width: 3.5cm),
       )
     }
   ]
@@ -38,9 +39,7 @@
   linebreak()
 
   for experience in experiences {
-    section(
-      experience.title,
-    )[
+    section(experience.title)[
       #for event in experience.events {
         grid(
           columns: (2fr, 1fr),
@@ -48,9 +47,9 @@
           strong(event.title) + if (event.location != none) {
             ", " + event.location
           },
-          emph(
-            event.date.start + if (event.date.end != none) { " - " + event.date.end },
-          ),
+          emph(event.date.start + if (event.date.end != none) {
+            " - " + event.date.end
+          }),
         )
 
         v(-5pt)
@@ -58,8 +57,7 @@
         grid(
           columns: (2fr, 1fr),
           align: (left, right),
-          event.description,
-          event.remark,
+          event.description, event.remark,
         )
 
         v(0.5cm)
@@ -74,9 +72,12 @@
   // Rest of the document
   doc
 
-  align(bottom, text(size: 0.75em)[
-    #line(length: 33%, stroke: 0.5pt)
-    Quelle: #link("https://github.com/quiode/CurriculumVitae") \
-    Version vom #datetime.today().display("[day].[month].[year]")
-  ])
+  align(
+    bottom,
+    text(size: 0.75em)[
+      #line(length: 33%, stroke: 0.5pt)
+      Quelle: #link("https://github.com/quiode/CurriculumVitae") \
+      Version vom #datetime.today().display("[day].[month].[year]")
+    ],
+  )
 }

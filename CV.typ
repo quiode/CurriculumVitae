@@ -16,22 +16,28 @@
   ),
   avatar: "avatar.jpeg",
   experiences: (
-    (title: "Ausbildung", events: ((
-      title: "ETH Zürich",
-      location: none,
-      date: (start: "2023", end: "jetzt"),
-      description: [Bachelor Informatik],
-      remark: "BP: 5.5",
-    ), (
-      title: "Kantonsschule Wattwil",
-      location: none,
-      date: (start: "2018", end: "2022"),
-      description: [
-        Schwerpunkt Physik und Anwendungen der Mathematik \
-        CodeCamp, Amnesty International
-      ],
-      remark: none,
-    ))),
+    (
+      title: "Ausbildung",
+      events: (
+        (
+          title: "ETH Zürich",
+          location: none,
+          date: (start: "2023", end: "jetzt"),
+          description: [Bachelor Informatik],
+          remark: "BP: 5.5",
+        ),
+        (
+          title: "Kantonsschule Wattwil",
+          location: none,
+          date: (start: "2018", end: "2022"),
+          description: [
+            Schwerpunkt Physik und Anwendungen der Mathematik \
+            CodeCamp, Amnesty International
+          ],
+          remark: none,
+        ),
+      ),
+    ),
     (
       title: "Berufserfahrung",
       events: (
@@ -54,23 +60,37 @@
         ),
       ),
     ),
-    (title: "Weitere Erfahrungen", events: ((
-      title: "Informatikschule 61 Frauenfeld",
-      location: none,
-      date: (start: "Juli 2022", end: "November 2022"),
-      description: [Rekrutenschule Telematiksoldat],
-      remark: none,
-    ),)),
+    (
+      title: "Weitere Erfahrungen",
+      events: (
+        (
+          title: "Informatikschule 61 Frauenfeld",
+          location: none,
+          date: (start: "Juli 2022", end: "November 2022"),
+          description: [Rekrutenschule Telematiksoldat],
+          remark: none,
+        ),
+      ),
+    ),
   ),
-  custom: ((title: "Fähigkeiten", body: [
-    #grid(columns: (1fr, 1fr), [
-      === Sprachen
-      Deutsch - Muttersprache \
-      Englisch - Fortgeschritten \
-      Französisch - Grundkenntnisse
-    ], [
-      === Programmiersprachen und Frameworks
-      Angular, Bootstrap, Springboot, Apache POI, Docker, Linux
-    ])
-  ]),),
+  custom: (
+    (
+      title: "Fähigkeiten",
+      body: [
+        #grid(
+          columns: (1fr, 1fr),
+          [
+            === Sprachen
+            Deutsch - Muttersprache \
+            Englisch - C1 (7.5 in #link("https://ielts.org/take-a-test/test-types/ielts-academic-test", "IELTS Academic")) \
+            Französisch - Grundkenntnisse
+          ],
+          [
+            === Programmiersprachen und Frameworks
+            Angular, Bootstrap, Springboot, Apache POI, Docker, Linux
+          ],
+        )
+      ],
+    ),
+  ),
 )
