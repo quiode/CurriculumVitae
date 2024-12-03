@@ -44,7 +44,7 @@
         (
           title: "Praktikant in der Entwicklung",
           location: "c-alm AG",
-          date: (start: "Dezember 2023", end: "August 2024"),
+          date: (start: "Dezember 2022", end: "August 2023"),
           description: [
             Frontend mit Angular und Bootstrap, Backend mit Spring Boot und Apache POI \
             Deployen von neuen Projekten mit Docker
