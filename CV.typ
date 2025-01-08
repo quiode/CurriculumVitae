@@ -1,3 +1,4 @@
+
 // My actual CV
 #import "resume.typ": resume // resume template
 
@@ -93,4 +94,13 @@
       ],
     ),
   ),
+)
+
+#align(
+  bottom,
+  text(size: 0.75em)[
+    #line(length: 33%, stroke: 0.5pt)
+    Quelle: #link("https://github.com/quiode/CurriculumVitae") \
+    Version vom #datetime.today().display("[day].[month].[year]")
+  ],
 )

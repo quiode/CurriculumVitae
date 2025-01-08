@@ -1,3 +1,4 @@
+
 // Generic Template for a CV, falls under the MIT License specified in the same folder as this file.
 #let head(name, headlines) = {
   heading(text(size: 1.5em, upper(name)), level: 1)
@@ -44,12 +45,16 @@
         grid(
           columns: (2fr, 1fr),
           align: (left, right),
-          strong(event.title) + if (event.location != none) {
-            ", " + event.location
-          },
-          emph(event.date.start + if (event.date.end != none) {
-            " - " + event.date.end
-          }),
+          strong(event.title)
+            + if (event.location != none) {
+              ", " + event.location
+            },
+          emph(
+            event.date.start
+              + if (event.date.end != none) {
+                " - " + event.date.end
+              },
+          ),
         )
 
         v(-5pt)
@@ -71,13 +76,4 @@
 
   // Rest of the document
   doc
-
-  align(
-    bottom,
-    text(size: 0.75em)[
-      #line(length: 33%, stroke: 0.5pt)
-      Quelle: #link("https://github.com/quiode/CurriculumVitae") \
-      Version vom #datetime.today().display("[day].[month].[year]")
-    ],
-  )
 }
