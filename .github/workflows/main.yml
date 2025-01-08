@@ -15,7 +15,7 @@ jobs:
         with:
           source_file: CV.typ
           options: |
-            CV-de.typ
+            CV-de.pdf
             --font-path
             fontawesome
             --input
@@ -25,7 +25,7 @@ jobs:
         with:
           source_file: CV.typ
           options: |
-            CV-en.typ
+            CV-en.pdf
             --font-path
             fontawesome
             --input
