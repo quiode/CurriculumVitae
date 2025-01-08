@@ -14,7 +14,7 @@
     (link("tel:+41787466828", "+41 78 746 68 28"),),
     ("Hofackerstrasse 3, 8722 Kaltbrunn",),
   ),
-  avatar: "avatar.jpeg",
+  avatar: "avatar.jpg",
   experiences: (
     (
       title: "Ausbildung",
