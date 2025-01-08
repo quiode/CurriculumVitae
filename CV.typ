@@ -1,10 +1,17 @@
 
+// libraries
+#import "@preview/linguify:0.4.1": * // internalization
+
 // My actual CV
 #import "resume.typ": resume // resume template
 
+// internalization settings
+#let lang_data = toml("lang.toml")
+#set-database(lang_data)
+
 // general settings
-#set text(lang: "de")
-#set document(title: "Lebenslauf von Dominik Schwaiger", author: "Dominik Schwaiger")
+#set text(lang: sys.inputs.at("lang", default: "en"))
+#set document(title: linguify("title"), author: "Dominik Schwaiger")
 // resume import
 #show: doc => resume(
   doc,
@@ -18,21 +25,21 @@
   avatar: "avatar.jpg",
   experiences: (
     (
-      title: "Ausbildung",
+      title: linguify("education"),
       events: (
         (
-          title: "ETH Zürich",
+          title: "ETH " + linguify("zurich"),
           location: none,
-          date: (start: "2023", end: "jetzt"),
-          description: [Bachelor Informatik],
+          date: (start: "2023", end: linguify("now")),
+          description: [#linguify("bsc_inf")],
           remark: "BP: 5.5",
         ),
         (
-          title: "Kantonsschule Wattwil",
+          title: linguify("ksw"),
           location: none,
           date: (start: "2018", end: "2022"),
           description: [
-            Schwerpunkt Physik und Anwendungen der Mathematik \
+            #linguify("main_subject") \
             CodeCamp, Amnesty International
           ],
           remark: none,
@@ -40,35 +47,35 @@
       ),
     ),
     (
-      title: "Berufserfahrung",
+      title: linguify("experience"),
       events: (
         (
-          title: "Praktikant in der Entwicklung",
+          title: linguify("intern_dev"),
           location: "c-alm AG",
-          date: (start: "Dezember 2022", end: "August 2023"),
+          date: (start: linguify("december") + " 2022", end: "August 2023"),
           description: [
-            Frontend mit Angular und Bootstrap, Backend mit Spring Boot und Apache POI \
-            Deployen von neuen Projekten mit Docker
+            #linguify("frontend"), #linguify("backend") \
+            #linguify("deploy")
           ],
           remark: none,
         ),
         (
-          title: "Praktikant Informatik",
+          title: linguify("intern_cs"),
           location: "Markant AG",
-          date: (start: "Oktober 2019", end: none),
-          description: [Einrichten von Arbeitsplätzen, IT-Support],
+          date: (start: linguify("october") + " 2019", end: none),
+          description: [#linguify("working_space"), IT-Support],
           remark: none,
         ),
       ),
     ),
     (
-      title: "Weitere Erfahrungen",
+      title: linguify("additional"),
       events: (
         (
-          title: "Informatikschule 61 Frauenfeld",
+          title: linguify("cs_school"),
           location: none,
-          date: (start: "Juli 2022", end: "November 2022"),
-          description: [Rekrutenschule Telematiksoldat],
+          date: (start: linguify("july") + " 2022", end: "November 2022"),
+          description: linguify("rs"),
           remark: none,
         ),
       ),
@@ -76,18 +83,18 @@
   ),
   custom: (
     (
-      title: "Fähigkeiten",
+      title: linguify("skills"),
       body: [
         #grid(
           columns: (1fr, 1fr),
           [
-            === Sprachen
-            Deutsch - Muttersprache \
-            Englisch - C1 (7.5 in #link("https://ielts.org/take-a-test/test-types/ielts-academic-test", "IELTS Academic")) \
-            Französisch - Grundkenntnisse
+            === #linguify("languages")
+            #linguify("german") - #linguify("mother_tongue") \
+            #linguify("english") - C1 (7.5 in #link("https://ielts.org/take-a-test/test-types/ielts-academic-test", "IELTS Academic")) \
+            #linguify("french") - #linguify("basic_knowledge")
           ],
           [
-            === Programmiersprachen und Frameworks
+            === #linguify("cs_langs")
             Angular, Bootstrap, Springboot, Apache POI, Docker, Linux
           ],
         )
@@ -100,7 +107,7 @@
   bottom,
   text(size: 0.75em)[
     #line(length: 33%, stroke: 0.5pt)
-    Quelle: #link("https://github.com/quiode/CurriculumVitae") \
-    Version vom #datetime.today().display("[day].[month].[year]")
+    #linguify("source"): #link("https://github.com/quiode/CurriculumVitae") \
+    #linguify("version_of") #datetime.today().display("[day].[month].[year]")
   ],
 )

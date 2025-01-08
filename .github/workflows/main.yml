@@ -1,30 +1,44 @@
 name: Build LaTeX document
-on: 
+on:
   push:
     branches:
       - main
-  workflow_dispatch: 
+  workflow_dispatch:
 jobs:
   build_latex:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v3
-      - name: Typst
+      - name: Typst de
         uses: quiode/typst-action@main # use while main action has bug
         with:
           source_file: CV.typ
           options: |
+            CV-de.typ
             --font-path
             fontawesome
-      - name: Create a Release
-        uses: "marvinpinto/action-automatic-releases@latest"
+            --input
+            lang=de
+      - name: Typst en
+        uses: quiode/typst-action@main # use while main action has bug
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
+          source_file: CV.typ
+          options: |
+            CV-en.typ
+            --font-path
+            fontawesome
+            --input
+            lang=en
+      - name: Create a Release
+        uses: 'marvinpinto/action-automatic-releases@latest'
+        with:
+          repo_token: '${{ secrets.GITHUB_TOKEN }}'
+          automatic_release_tag: 'latest'
           prerelease: false
           draft: false
-          title: "Latest CV"
+          title: 'Latest CV'
           files: |
             LICENSE
-            CV.pdf
+            CV-en.pdf
+            CV-de.pdf
