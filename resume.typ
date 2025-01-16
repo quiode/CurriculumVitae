@@ -32,7 +32,7 @@
       grid(
         columns: (8fr, 2fr),
         align: center,
-        head(name, headlines), image(avatar, width: 3.5cm),
+        head(name, headlines), box(image(avatar, width: 3.5cm), radius: 50%, clip: true, stroke: black),
       )
     }
   ]
