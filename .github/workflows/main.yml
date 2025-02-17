@@ -11,7 +11,7 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v3
       - name: Typst de
-        uses: quiode/typst-action@main # use while main action has bug
+        uses: lvignoli/typst-action@main
         with:
           source_file: CV.typ
           options: |
@@ -21,7 +21,7 @@ jobs:
             --input
             lang=de
       - name: Typst de svg
-        uses: quiode/typst-action@main # use while main action has bug
+        uses: quiode/typst-action@main
         with:
           source_file: CV.typ
           options: |
@@ -31,7 +31,7 @@ jobs:
             --input
             lang=de
       - name: Typst en
-        uses: quiode/typst-action@main # use while main action has bug
+        uses: quiode/typst-action@main
         with:
           source_file: CV.typ
           options: |
@@ -41,7 +41,7 @@ jobs:
             --input
             lang=en
       - name: Typst en svg
-        uses: quiode/typst-action@main # use while main action has bug
+        uses: quiode/typst-action@main
         with:
           source_file: CV.typ
           options: |
