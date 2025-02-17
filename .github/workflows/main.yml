@@ -13,13 +13,13 @@ jobs:
       - name: Set up Typst
         uses: typst-community/setup-typst@v4
       - name: CV-de.pdf
-        run: typst CV.typ CV-de.pdf --input lang=de
+        run: typst compile CV.typ CV-de.pdf --input lang=de
       - name: CV-de.svg
-        run: typst CV.typ CV-de.svg --input lang=de
+        run: typst compile CV.typ CV-de.svg --input lang=de
       - name: CV-en.pdf
-        run: typst CV.typ CV-en.pdf --input lang=en
+        run: typst compile CV.typ CV-en.pdf --input lang=en
       - name: CV-en.svg
-        run: typst CV.typ CV-en.svg --input lang=en
+        run: typst compile CV.typ CV-en.svg --input lang=en
       - name: Create a Release
         uses: 'marvinpinto/action-automatic-releases@latest'
         with:
