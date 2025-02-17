@@ -9,47 +9,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
-        uses: actions/checkout@v3
-      - name: Typst de
-        uses: lvignoli/typst-action@main
-        with:
-          source_file: CV.typ
-          options: |
-            CV-de.pdf
-            --font-path
-            fontawesome
-            --input
-            lang=de
-      - name: Typst de svg
-        uses: quiode/typst-action@main
-        with:
-          source_file: CV.typ
-          options: |
-            CV-de.svg
-            --font-path
-            fontawesome
-            --input
-            lang=de
-      - name: Typst en
-        uses: quiode/typst-action@main
-        with:
-          source_file: CV.typ
-          options: |
-            CV-en.pdf
-            --font-path
-            fontawesome
-            --input
-            lang=en
-      - name: Typst en svg
-        uses: quiode/typst-action@main
-        with:
-          source_file: CV.typ
-          options: |
-            CV-en.svg
-            --font-path
-            fontawesome
-            --input
-            lang=en
+        uses: actions/checkout@v4
+      - name: Set up Typst
+        uses: typst-community/setup-typst@v4
+      - name: CV-de.pdf
+        run: typst CV.typ CV-de.pdf --font-path fontawesome --input lang=de
+      - name: CV-de.svg
+        run: typst CV.typ CV-de.svg --font-path fontawesome --input lang=de
+      - name: CV-en.pdf
+        run: typst CV.typ CV-en.pdf --font-path fontawesome --input lang=en
+      - name: CV-en.svg
+        run: typst CV.typ CV-en.svg --font-path fontawesome --input lang=en
       - name: Create a Release
         uses: 'marvinpinto/action-automatic-releases@latest'
         with:

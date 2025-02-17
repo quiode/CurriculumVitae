@@ -23,7 +23,7 @@
 #let resume(doc, name, headlines: (), experiences: (), custom: (), avatar: none) = {
   set page(margin: (top: 0.6in, right: 0.75in, bottom: 0.6in, left: 0.75in))
   set text(font: "New Computer Modern", size: 11pt)
-  show raw: set text(font: "New Computer Modern Mono")
+  // show raw: set text(font: "New Computer Modern Mono")
 
   align(center)[
     #if avatar == none {
