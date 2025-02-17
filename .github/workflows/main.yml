@@ -5,7 +5,7 @@ on:
       - main
   workflow_dispatch:
 jobs:
-  build_latex:
+  build_typst:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
@@ -20,12 +20,32 @@ jobs:
             fontawesome
             --input
             lang=de
+      - name: Typst de svg
+        uses: quiode/typst-action@main # use while main action has bug
+        with:
+          source_file: CV.typ
+          options: |
+            CV-de.svg
+            --font-path
+            fontawesome
+            --input
+            lang=de
       - name: Typst en
         uses: quiode/typst-action@main # use while main action has bug
         with:
           source_file: CV.typ
           options: |
             CV-en.pdf
+            --font-path
+            fontawesome
+            --input
+            lang=en
+      - name: Typst en svg
+        uses: quiode/typst-action@main # use while main action has bug
+        with:
+          source_file: CV.typ
+          options: |
+            CV-en.svg
             --font-path
             fontawesome
             --input
@@ -42,3 +62,5 @@ jobs:
             LICENSE
             CV-en.pdf
             CV-de.pdf
+            CV-en.svg
+            CV-de.svg
