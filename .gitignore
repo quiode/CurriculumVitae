@@ -1,2 +1,4 @@
 *.pdf
 .idea
+*.svg
+!avatar.jpg
