@@ -8,4 +8,4 @@ To start the watch progress, run `run.sh`.
 
 ## Compilation
 
-Run `typst compile CV.typ --font-path fontawesome` to compile.
+Run `typst compile CV.typ --input lang=en` to compile.
