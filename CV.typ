@@ -20,7 +20,7 @@
     ("10.03.2004, Bülach",),
     (link("mailto:mail@dominik-schwaiger.ch"),),
     (link("tel:+41787466828", "+41 78 746 68 28"),),
-    ("Hofackerstrasse 3, 8722 Kaltbrunn",),
+    ("Büelstrasse 6, 8863 Buttikon SZ",),
   ),
   avatar: "avatar.jpg",
   experiences: (
