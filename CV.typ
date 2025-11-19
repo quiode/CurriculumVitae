@@ -74,8 +74,15 @@
         (
           title: linguify("cs_school"),
           location: none,
-          date: (start: linguify("july") + " 2022", end: "November 2022"),
+          date: (start: linguify("july") + " 2022", end: linguify("november") + " 2022"),
           description: linguify("rs"),
+          remark: none,
+        ),
+        (
+          title: linguify("unsw"),
+          location: linguify("sydney"),
+          date: (start: linguify("september") + " 2025", end: linguify("february") + " 2026"),
+          description: linguify("exchange"),
           remark: none,
         ),
       ),
@@ -95,7 +102,7 @@
           ],
           [
             === #linguify("cs_langs")
-            Angular, Bootstrap, Springboot, Apache POI, Docker, Linux
+            Angular, Bootstrap, Springboot, Apache POI, Docker, Linux, Rust
           ],
         )
       ],

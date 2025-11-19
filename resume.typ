@@ -43,7 +43,7 @@
     section(experience.title)[
       #for event in experience.events {
         grid(
-          columns: (2fr, 1fr),
+          columns: (1.5fr, 1fr),
           align: (left, right),
           strong(event.title)
             + if (event.location != none) {
