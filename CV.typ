@@ -1,6 +1,6 @@
 
 // libraries
-#import "@preview/linguify:0.4.1": * // internalization
+#import "@preview/linguify:0.4.2": * // internalization
 
 // My actual CV
 #import "resume.typ": resume // resume template
