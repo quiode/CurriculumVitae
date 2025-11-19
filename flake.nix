@@ -2,7 +2,7 @@
   description = "Curriculum Vitae";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Systems, gets a list of systems, allows easy overriding
     systems.url = "github:nix-systems/default";
@@ -13,7 +13,10 @@
     pkgsFor = inputs.nixpkgs.legacyPackages;
   in {
     devShells = eachSystem (system: {
-      default = pkgsFor.${system}.callPackage ./shell.nix {};
+      default = with pkgsFor.${system};
+        mkShellNoCC {
+          packages = [typst git tinymist];
+        };
     });
 
     # set up formatter for each system
