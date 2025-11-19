@@ -31,7 +31,9 @@
           title: "ETH " + linguify("zurich"),
           location: none,
           date: (start: "2023", end: linguify("now")),
-          description: [#linguify("bsc_inf")],
+          description: [#linguify("bsc_inf") \ #link(
+              "https://thealternative.ch/en",
+            )[TheAlternative (Open Source and Free Software Society)]],
           remark: "BP: 5.5",
         ),
         (
