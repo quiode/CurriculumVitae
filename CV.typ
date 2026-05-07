@@ -103,8 +103,8 @@
             #linguify("french") - #linguify("basic_knowledge")
           ],
           [
-            === #linguify("cs_langs")
-            Angular, Bootstrap, Springboot, Apache POI, Docker, Linux, Rust
+            === #linguify("cs_skills")
+            Angular, Bootstrap, Springboot, Apache POI, Docker, Linux, Rust (Contributor), NixOS (Maintainer)
           ],
         )
       ],
