@@ -87,6 +87,13 @@
           description: linguify("exchange"),
           remark: none,
         ),
+        (
+          title: linguify("wk"),
+          location: none,
+          date: (start: linguify("june") + " 2026", end: none),
+          description: linguify("wk_desc"),
+          remark: none,
+        ),
       ),
     ),
   ),
