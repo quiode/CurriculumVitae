@@ -2,3 +2,4 @@
 .idea
 *.svg
 !avatar.jpg
+.direnv
